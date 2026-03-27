@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
 const PHRASES = [
@@ -12,6 +12,15 @@ const PHRASES = [
 ];
 
 export default function Hero() {
+  const containerRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const imageOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 0.5, 0]);
+
   const [text, setText] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -45,7 +54,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-end">
+    <section ref={containerRef} className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-end">
       <div className="flex-1 w-full max-w-7xl px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10 pb-12 min-h-0">
         
         {/* Left Side: Content */}
@@ -99,13 +108,18 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="relative w-full h-full min-h-0 hidden md:flex items-end justify-center"
         >
-          <Image 
-            src="/images/profile.png" 
-            alt="Omar Mohamed Gad"
-            fill
-            className="object-contain object-bottom pointer-events-none drop-shadow-2xl"
-            priority
-          />
+          <motion.div 
+            style={{ y: imageY, opacity: imageOpacity }} 
+            className="w-full h-full relative flex items-end justify-center"
+          >
+            <Image 
+              src="/images/profile.png" 
+              alt="Omar Mohamed Gad"
+              fill
+              className="object-contain object-bottom pointer-events-none drop-shadow-2xl"
+              priority
+            />
+          </motion.div>
         </motion.div>
       </div>
     </section>

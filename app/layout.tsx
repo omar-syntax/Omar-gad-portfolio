@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     "18-year-old software engineer, AI enthusiast, and student leader building systems that create real impact.",
 };
 
+import AnimatedBackground from "@/components/ui/AnimatedBackground";
+import Sidebar from "@/components/ui/Sidebar";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,6 +23,11 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="bg-black text-white antialiased overflow-x-hidden">
+        {/* Fixed background geo-pattern */}
+        <AnimatedBackground />
+        {/* Fixed left sidebar */}
+        <Sidebar />
+        
         {children}
       </body>
     </html>

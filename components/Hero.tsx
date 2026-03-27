@@ -11,6 +11,8 @@ const PHRASES = [
   "Turning complex problems into elegant solutions.",
 ];
 
+import Link from "next/link";
+
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -49,10 +51,6 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [text, isDeleting, phraseIndex]);
 
-  const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section ref={containerRef} className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-end">
       <div className="flex-1 w-full max-w-7xl px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10 pb-12 min-h-0">
@@ -90,14 +88,14 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            <button 
-              onClick={scrollToAbout}
+            <Link 
+              href="/about"
               className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none group border border-white/30 hover:border-white transition-colors duration-300"
             >
               <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-8 py-1 text-sm font-medium text-white transition-all duration-300 group-hover:bg-white group-hover:text-black">
                 Explore My Journey
               </span>
-            </button>
+            </Link>
           </motion.div>
         </div>
 

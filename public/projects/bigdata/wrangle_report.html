@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Wrangling Report</title>
+</head>
+<body>
+    <h1>Data Wrangling Report</h1>
+    <p>This report provides an overview of the data wrangling efforts undertaken in the <em>wrangle_act.ipynb</em> notebook. The primary goal was to clean and prepare the dataset for analysis, ensuring that it was accurate, consistent, and complete.</p>
+    
+    <h2>1. Data Gathering</h2>
+    <p>Data was gathered from multiple sources including a Twitter archive, an additional dataset containing tweet image predictions, and a supplementary CSV file. These were loaded into the notebook using appropriate Python libraries such as pandas.</p>
+    
+    <h2>2. Data Assessment</h2>
+    <p>The gathered data was assessed both visually and programmatically to identify issues that needed cleaning. Several quality and tidiness issues were identified during this process:</p>
+    <ul>
+        <li>Missing values in several columns, such as <code>in_reply_to_status_id</code> and <code>expanded_urls</code>.</li>
+        <li>Incorrect data types, especially in columns like <code>tweet_id</code> and <code>timestamp</code>.</li>
+        <li>Inconsistent or incorrect entries in categorical columns like dog stages and dog names.</li>
+        <li>Duplicate records and retweets that needed to be removed.</li>
+    </ul>
+    
+    <h2>3. Data Cleaning</h2>
+    <p>The identified issues were addressed through systematic data cleaning. The following steps were undertaken:</p>
+    <ul>
+        <li>Missing values were handled by either filling them appropriately or removing the affected rows.</li>
+        <li>Data types were corrected using pandas methods to ensure proper format for analysis.</li>
+        <li>Inconsistent entries were standardized, and invalid entries were either corrected or removed.</li>
+        <li>Duplicates and retweets were filtered out to maintain only original tweets with dog ratings.</li>
+        <li>The dataset was restructured to ensure that all necessary columns were correctly formatted and populated.</li>
+    </ul>
+    
+    <h2>4. Final Dataset</h2>
+    <p>After the cleaning process, the dataset was verified to ensure that all issues were resolved. The cleaned dataset is now ready for further analysis and contains only accurate, relevant data. The wrangling process has significantly improved the quality and usability of the data, laying a strong foundation for subsequent analysis.</p>
+    
+    <p>This concludes the data wrangling report. The cleaned dataset is now prepared for exploratory analysis and modeling.</p>
+</body>
+</html>

@@ -75,7 +75,7 @@ Contributions are welcome! If you would like to help improve the Adventure Game,
 
 ## Contact
 
-For any questions or feedback, feel free to reach out to the developer at [om224367@gmail.com].
+For any questions or feedback, feel free to reach out to the developer via the contact form on the portfolio website.
 
 
 

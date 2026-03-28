@@ -25,10 +25,12 @@ export default function RootLayout({
       <body className="bg-black text-white antialiased overflow-x-hidden">
         {/* Fixed background geo-pattern */}
         <AnimatedBackground />
-        {/* Fixed left sidebar */}
-        <Sidebar />
         
-        {children}
+        {/* Main content with higher stacking order */}
+        <div className="relative z-10">
+          <Sidebar />
+          {children}
+        </div>
       </body>
     </html>
   );

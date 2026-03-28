@@ -339,19 +339,19 @@ function MilestoneSection({ milestone, index }: { milestone: typeof milestones[0
   return (
     <div
       ref={ref}
-      className="min-h-screen flex items-center justify-center px-6 md:px-20 py-20 md:py-32 relative border-t border-white/5"
+      className="min-h-[80vh] md:min-h-screen flex items-center justify-center px-6 md:px-20 py-16 md:py-32 relative border-t border-white/5"
     >
       {/* Large background year */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 0.04 } : { opacity: 0 }}
         transition={{ duration: 1 }}
-        className="absolute right-6 md:right-20 top-1/2 -translate-y-1/2 text-[15vw] md:text-[20vw] font-bold text-white select-none pointer-events-none leading-none z-0"
+        className="absolute right-4 md:right-20 top-1/2 -translate-y-1/2 text-[25vw] md:text-[20vw] font-bold text-white select-none pointer-events-none leading-none z-0 overflow-hidden"
       >
         {milestone.year}
       </motion.div>
 
-      <div className="max-w-[1000px] w-full relative z-10 flex flex-col md:flex-row gap-12 md:gap-24 items-center">
+      <div className="max-w-[1000px] w-full relative z-10 flex flex-col md:flex-row gap-10 md:gap-24 items-center">
 
         {/* Text Column */}
         <div className={`w-full ${milestone.images.length > 0 ? 'md:w-1/2' : 'max-w-3xl'} space-y-8 flex-shrink-0`}>
@@ -368,7 +368,7 @@ function MilestoneSection({ milestone, index }: { milestone: typeof milestones[0
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-white leading-tight"
+            className="text-2xl md:text-5xl font-bold text-white leading-tight"
           >
             {milestone.title}
           </motion.h3>
@@ -449,7 +449,7 @@ export default function Journey() {
   return (
     <section id="journey" className="relative">
       {/* Header */}
-      <div className="sticky top-0 z-20 px-8 md:px-20 py-6 bg-black/60 backdrop-blur-md border-b border-white/5">
+      <div className="sticky top-0 z-20 px-6 md:px-20 py-4 md:py-6 bg-black/60 backdrop-blur-md border-b border-white/5">
         <p className="text-xs uppercase tracking-widest text-white/30 font-mono">Journey</p>
       </div>
 

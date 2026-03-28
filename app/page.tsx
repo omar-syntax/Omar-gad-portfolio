@@ -29,7 +29,7 @@ function Teaser({
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="min-h-[70vh] flex items-center px-8 md:px-20 py-24 border-t border-white/5"
+      className="min-h-[70vh] flex items-center px-6 md:px-20 py-24 border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
         {/* Left Side: Content */}
@@ -123,7 +123,7 @@ export default function Home() {
       />
 
       {/* Final CTA */}
-      <section className="min-h-[500px] flex flex-col items-center justify-center px-8 py-32 border-t border-white/5 bg-white/[0.01]">
+      <section className="min-h-[500px] flex flex-col items-center justify-center px-6 md:px-20 py-32 border-t border-white/5 bg-white/[0.01]">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">
           Ready to build <br />
           <span className="text-white/30">the future?</span>

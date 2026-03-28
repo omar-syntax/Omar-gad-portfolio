@@ -53,7 +53,7 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-end">
-      <div className="flex-1 w-full max-w-7xl px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10 pb-12 min-h-0">
+      <div className="flex-1 w-full max-w-7xl px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10 pb-12 min-h-0">
         
         {/* Left Side: Content */}
         <div className="flex flex-col items-start gap-8">
@@ -63,7 +63,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
               Engineering <br />
               <span className="text-white">
                 ideas into reality.
@@ -104,11 +104,11 @@ export default function Hero() {
           initial={{ opacity: 0, x: 20, scale: 0.95 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="relative w-full h-full min-h-0 hidden md:flex items-end justify-center"
+          className="relative w-full h-[40vh] md:h-full min-h-0 flex items-end justify-center"
         >
           <motion.div 
             style={{ y: imageY, opacity: imageOpacity }} 
-            className="w-full h-full relative flex items-end justify-center"
+            className="w-full h-full relative border-none flex items-end justify-center"
           >
             <Image 
               src="/images/profile.png" 

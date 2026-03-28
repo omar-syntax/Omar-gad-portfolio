@@ -22,12 +22,12 @@ export default function AnimatedBackground() {
 
   if (!mounted) return null;
 
-  const dots = Array.from({ length: 30 });
+  const dots = Array.from({ length: 50 });
   const circles = Array.from({ length: 4 });
   const lines = Array.from({ length: 6 });
 
   return (
-    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-black">
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-black">
       <motion.div
         className="absolute inset-0 w-full h-full"
         animate={{
@@ -40,19 +40,19 @@ export default function AnimatedBackground() {
         {dots.map((_, i) => (
           <motion.div
             key={`dot-${i}`}
-            className="absolute rounded-full bg-white/20"
+            className="absolute rounded-full bg-white/30"
             style={{
-              width: `${(i % 3) + 1}px`,
-              height: `${(i % 3) + 1}px`,
-              top: `${(i * 13) % 100}%`,
-              left: `${(i * 29) % 100}%`,
+              width: `${(i % 3) + 1.5}px`,
+              height: `${(i % 3) + 1.5}px`,
+              top: `${(i * 7) % 100}%`,
+              left: `${(i * 23) % 100}%`,
             }}
             animate={{
-              y: [0, -15, 0],
-              opacity: [0.05, 0.25, 0.05],
+              y: [0, -20, 0],
+              opacity: [0.05, 0.35, 0.05],
             }}
             transition={{
-              duration: 5 + (i % 5),
+              duration: 5 + (i % 8),
               repeat: Infinity,
               ease: "easeInOut",
             }}

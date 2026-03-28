@@ -39,8 +39,8 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: "-20%" });
 
   return (
-    <section id="contact" className="min-h-screen flex flex-col items-center justify-center px-8 py-32 border-t border-white/5">
-      <div ref={ref} className="max-w-2xl w-full mx-auto text-center space-y-12">
+    <section id="contact" className="min-h-screen flex flex-col items-center justify-center px-6 py-24 md:py-32 border-t border-white/5">
+      <div ref={ref} className="max-w-2xl w-full mx-auto text-center space-y-10 md:space-y-12">
 
         <motion.p
           initial={{ opacity: 0 }}
@@ -55,7 +55,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-4xl md:text-5xl font-bold text-white leading-tight"
+          className="text-3xl md:text-5xl font-bold text-white leading-tight"
         >
           Let&apos;s build something<br />
           <span className="text-white/30">impactful together.</span>
@@ -74,7 +74,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="flex justify-center gap-6"
+          className="flex flex-wrap justify-center gap-4 md:gap-6"
         >
           {links.map(({ label, href, icon }) => (
             <a
@@ -83,7 +83,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               title={label}
-              className="group flex items-center gap-2 border border-white/15 text-white/50 hover:text-white hover:border-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
+              className="group flex items-center gap-2 border border-white/15 text-white/50 hover:text-white hover:border-white px-5 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm font-medium transition-all duration-300"
             >
               {icon}
               <span>{label}</span>

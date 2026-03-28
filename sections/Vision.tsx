@@ -7,7 +7,7 @@ export default function Vision() {
   const { ref, isInView } = useScrollAnimation(0.2);
 
   return (
-    <section id="vision" className="min-h-screen flex flex-col items-center justify-center px-8 md:px-20 py-32 border-t border-white/5 relative overflow-hidden">
+    <section id="vision" className="min-h-screen flex flex-col items-center justify-center px-6 md:px-20 py-24 md:py-32 border-t border-white/5 relative overflow-hidden">
 
       {/* Background text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
@@ -28,7 +28,7 @@ export default function Vision() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, delay: 0.1 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+          className="text-3xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
         >
           I&apos;m building toward<br />
           <span className="text-white/30">something bigger.</span>

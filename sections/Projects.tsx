@@ -46,7 +46,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="min-h-screen px-8 md:px-20 py-32 bg-transparent">
+    <section id="projects" className="min-h-screen px-6 md:px-20 py-24 md:py-32 bg-transparent">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 30 }}
@@ -56,7 +56,7 @@ export default function Projects() {
       >
         <div className="mb-20">
           <p className="text-xs uppercase tracking-[0.3em] text-white/30 mb-4 font-bold">Featured Portfolio</p>
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-6xl font-bold text-white mb-6">
             Building digital <br />
             <span className="text-white/20 italic">excellence.</span>
           </h2>
@@ -181,7 +181,7 @@ export default function Projects() {
               </div>
 
               {/* Bottom Section: Details */}
-              <div className="p-8 md:p-12 max-w-4xl">
+              <div className="p-6 md:p-12 max-w-4xl">
                 <div className="flex flex-wrap items-center gap-4 mb-4">
                   <span className="text-white/40 font-mono text-sm tracking-widest">{activeProject.year} · {activeProject.type}</span>
                   <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest border ${
@@ -195,7 +195,7 @@ export default function Projects() {
                 
                 <h1 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight">{activeProject.title}</h1>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mt-10">
                   <div className="md:col-span-2 space-y-8">
                     <div>
                       <h4 className="text-[10px] uppercase tracking-[0.2em] text-white/30 font-bold mb-4">Description</h4>

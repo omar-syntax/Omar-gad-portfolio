@@ -22,7 +22,7 @@ export default function Skills() {
   const { ref, isInView } = useScrollAnimation(0.2);
 
   return (
-    <section id="skills" className="min-h-screen px-8 md:px-20 py-32 border-t border-white/5">
+    <section id="skills" className="min-h-screen px-6 md:px-20 py-24 md:py-32 border-t border-white/5">
       <div ref={ref} className="max-w-7xl mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
@@ -36,7 +36,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl font-bold text-white mb-20"
+          className="text-3xl md:text-5xl font-bold text-white mb-12 md:mb-20"
         >
           The tools behind<br />
           <span className="text-white/30">the work.</span>

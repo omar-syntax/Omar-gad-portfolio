@@ -9,13 +9,20 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+html, body {
   background: #000000;
   color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
+  min-height: 100dvh;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
 }
 
 ::selection {

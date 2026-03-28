@@ -34,19 +34,19 @@ export default function ProjectWindow({
           />
 
           {/* Window Container */}
-          <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-[101] p-4 md:p-10">
+          <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-[101] p-0 md:p-10">
             <motion.div
-              initial={{ scale: 0.8, opacity: 0, y: 20 }}
+              initial={{ scale: 0.9, opacity: 0, y: 50 }}
               animate={{ 
                 scale: 1, 
                 opacity: 1, 
                 y: 0,
-                width: isFullscreen ? "100%" : "min(1200px, 95vw)",
-                height: isFullscreen ? "100%" : "min(800px, 85vh)",
+                width: isFullscreen ? "100%" : "min(1200px, 100vw)",
+                height: isFullscreen ? "100%" : "min(800px, 100dvh)",
               }}
-              exit={{ scale: 0.8, opacity: 0, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className={`bg-[#1c1c1e] border border-white/10 rounded-xl overflow-hidden shadow-2xl flex flex-col pointer-events-auto transition-all duration-300`}
+              exit={{ scale: 0.9, opacity: 0, y: 50 }}
+              transition={{ type: "spring", damping: 30, stiffness: 350 }}
+              className={`bg-[#1c1c1e] border-none md:border md:border-white/10 rounded-none md:rounded-xl overflow-hidden shadow-2xl flex flex-col pointer-events-auto transition-all duration-300`}
             >
               {/* Title Bar */}
               <div className="h-10 bg-[#2c2c2e] flex items-center px-4 relative flex-shrink-0 select-none">

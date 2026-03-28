@@ -30,7 +30,7 @@ export default function Media() {
   const inView = useInView(ref, { once: true, margin: "-15%" });
 
   return (
-    <section id="media" className="min-h-screen px-8 md:px-20 py-32 border-t border-white/5">
+    <section id="media" className="min-h-screen px-6 md:px-20 py-24 md:py-32 border-t border-white/5">
       <div ref={ref} className="max-w-7xl mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
@@ -44,7 +44,7 @@ export default function Media() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl font-bold text-white mb-20"
+          className="text-3xl md:text-5xl font-bold text-white mb-12 md:mb-20"
         >
           The world is<br />
           <span className="text-white/30">starting to notice.</span>

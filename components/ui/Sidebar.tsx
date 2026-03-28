@@ -6,12 +6,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { path: "/",          label: "Home",        icon: "⌂" },
-  { path: "/about",     label: "About",       icon: "◉" },
-  { path: "/journey",   label: "Journey",     icon: "◈" },
-  { path: "/projects",  label: "Projects",    icon: "◧" },
-  { path: "/media",     label: "Media",       icon: "◻" },
-  { path: "/contact",    label: "Contact",     icon: "◈" },
+  { path: "/", label: "Home", icon: "⌂" },
+  { path: "/about", label: "About", icon: "◉" },
+  { path: "/journey", label: "Journey", icon: "◈" },
+  { path: "/projects", label: "Projects", icon: "◧" },
+  { path: "/media", label: "Media", icon: "◻" },
+  { path: "/contact", label: "Contact", icon: "◈" },
 ];
 
 export default function Sidebar() {
@@ -33,7 +33,7 @@ export default function Sidebar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     // Initial check
     handleScroll();
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
@@ -54,11 +54,10 @@ export default function Sidebar() {
               <Link
                 key={path}
                 href={path}
-                className={`group relative flex items-center justify-center w-10 h-10 md:w-9 md:h-9 rounded-full transition-all duration-300 ${
-                  isActive
-                    ? "bg-white text-black shadow-lg shadow-white/20 scale-110"
-                    : "text-white/40 hover:text-white hover:bg-white/10"
-                }`}
+                className={`group relative flex items-center justify-center w-10 h-10 md:w-9 md:h-9 rounded-full transition-all duration-300 ${isActive
+                  ? "bg-white text-black shadow-lg shadow-white/20 scale-110"
+                  : "text-white/40 hover:text-white hover:bg-white/10"
+                  }`}
               >
                 <span className="text-sm md:text-sm leading-none">{icon}</span>
                 {/* Tooltip - Desktop Only or refined for mobile */}
@@ -67,7 +66,7 @@ export default function Sidebar() {
                 </span>
                 {/* Active Indicator Dot */}
                 {isActive && (
-                  <motion.div 
+                  <motion.div
                     layoutId="active-nav"
                     className="absolute -bottom-1 w-1 h-1 bg-white rounded-full md:hidden"
                   />

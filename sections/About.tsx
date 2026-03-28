@@ -9,7 +9,7 @@ export default function About() {
   return (
     <section id="about" className="min-h-screen flex items-center px-6 md:px-20 py-24 md:py-32">
       <div ref={ref} className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-        
+
         {/* Left: Bold Statement */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}

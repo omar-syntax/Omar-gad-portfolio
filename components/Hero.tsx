@@ -36,7 +36,7 @@ export default function Hero() {
     } else if (isDeleting && text === "") {
       setIsDeleting(false);
       setPhraseIndex((prev) => (prev + 1) % PHRASES.length);
-      timeout = setTimeout(() => {}, 500); // Small pause before typing next
+      timeout = setTimeout(() => { }, 500); // Small pause before typing next
     } else {
       const nextText = isDeleting
         ? currentPhrase.substring(0, text.length - 1)
@@ -54,7 +54,7 @@ export default function Hero() {
   return (
     <section ref={containerRef} className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-end">
       <div className="flex-1 w-full max-w-7xl px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10 pb-12 min-h-0">
-        
+
         {/* Left Side: Content */}
         <div className="flex flex-col items-start gap-8">
           <motion.div
@@ -88,7 +88,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            <Link 
+            <Link
               href="/about"
               className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none group border border-white/30 hover:border-white transition-colors duration-300"
             >
@@ -106,12 +106,12 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="relative w-full h-[40vh] md:h-full min-h-0 flex items-end justify-center"
         >
-          <motion.div 
-            style={{ y: imageY, opacity: imageOpacity }} 
+          <motion.div
+            style={{ y: imageY, opacity: imageOpacity }}
             className="w-full h-full relative border-none flex items-end justify-center"
           >
-            <Image 
-              src="/images/profile.png" 
+            <Image
+              src="/images/profile.png"
               alt="Omar Mohamed Gad"
               fill
               className="object-contain object-bottom pointer-events-none drop-shadow-2xl"

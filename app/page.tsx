@@ -6,25 +6,25 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-function Teaser({ 
-  title, 
-  subtitle, 
-  description, 
-  href, 
+function Teaser({
+  title,
+  subtitle,
+  description,
+  href,
   label,
   imageSrc
-}: { 
-  title: string; 
-  subtitle: string; 
-  description: string; 
-  href: string; 
+}: {
+  title: string;
+  subtitle: string;
+  description: string;
+  href: string;
   label: string;
   imageSrc: string;
 }) {
   const { ref, isInView } = useScrollAnimation(0.2);
 
   return (
-    <motion.section 
+    <motion.section
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -42,7 +42,7 @@ function Teaser({
           <p className="text-lg text-white/50 leading-relaxed max-w-xl mb-10">
             {description}
           </p>
-          <Link 
+          <Link
             href={href}
             className="group inline-flex items-center gap-4 text-white font-medium tracking-wide transition-all duration-300"
           >
@@ -61,7 +61,7 @@ function Teaser({
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
           >
-            <Image 
+            <Image
               src={imageSrc}
               alt={label}
               fill
@@ -86,7 +86,7 @@ export default function Home() {
       </div>
 
       {/* Teasers */}
-      <Teaser 
+      <Teaser
         label="About"
         title="I don't just write code."
         subtitle="I build systems that matter."
@@ -95,7 +95,7 @@ export default function Home() {
         imageSrc="/images/DECI-session-img.jpg"
       />
 
-      <Teaser 
+      <Teaser
         label="Journey"
         title="A decade of creation."
         subtitle="From first spark to TV fame."
@@ -104,7 +104,7 @@ export default function Home() {
         imageSrc="/images/cairo-ict-img.jpg"
       />
 
-      <Teaser 
+      <Teaser
         label="Projects"
         title="Built for real people."
         subtitle="With real-world impact."
@@ -113,7 +113,7 @@ export default function Home() {
         imageSrc="/images/students-admession-support-leader.jpg"
       />
 
-      <Teaser 
+      <Teaser
         label="Media"
         title="The world is noticing."
         subtitle="Sharing the vision."
@@ -128,7 +128,7 @@ export default function Home() {
           Ready to build <br />
           <span className="text-white/30">the future?</span>
         </h2>
-        <Link 
+        <Link
           href="/contact"
           className="bg-white text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform duration-300"
         >

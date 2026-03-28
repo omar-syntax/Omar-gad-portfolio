@@ -49,14 +49,14 @@ export default function TerminalEmulator() {
 
   const processGameChoice = (choice: string) => {
     let response: Message[] = [];
-    
+
     if (choice === "1") {
       const monster = ["fairy", "dragon", "gorgon"][Math.floor(Math.random() * 3)];
       response.push({ text: `You approach the door of the house.`, type: "system" });
       response.push({ text: `You are about to knock when the door opens and out steps a ${monster}.`, type: "system" });
       response.push({ text: `Eep! This is the ${monster}'s house!`, type: "system" });
       response.push({ text: `The monster attacks you!`, type: "system" });
-      
+
       if (hasWand) {
         response.push({ text: `As the ${monster} moves to attack, you draw your magical Wand of Ogoroth!`, type: "system" });
         response.push({ text: `The Wand of Ogoroth shines brightly in your hand as you brace yourself for the attack.`, type: "system" });
@@ -106,16 +106,15 @@ export default function TerminalEmulator() {
   };
 
   return (
-    <div 
+    <div
       className="bg-black/90 p-4 font-mono text-sm h-full flex flex-col overflow-hidden"
       onClick={() => inputRef.current?.focus()}
     >
       <div ref={scrollRef} className="flex-1 overflow-y-auto custom-scrollbar space-y-2 pb-4">
         {messages.map((m, i) => (
-          <div key={i} className={`whitespace-pre-wrap leading-relaxed ${
-            m.type === "system" ? "text-green-400" : 
-            m.type === "user" ? "text-blue-400" : "text-white/80"
-          }`}>
+          <div key={i} className={`whitespace-pre-wrap leading-relaxed ${m.type === "system" ? "text-green-400" :
+              m.type === "user" ? "text-blue-400" : "text-white/80"
+            }`}>
             {m.type === "user" && <span className="text-white/40 mr-2">$</span>}
             {m.text}
           </div>

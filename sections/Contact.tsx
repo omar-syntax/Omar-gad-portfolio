@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import ContactForm from "@/components/ContactForm";
+
 
 const links = [
   {
@@ -25,7 +27,7 @@ const links = [
   },
   {
     label: "Email",
-    href: "mailto:omar@example.com",
+    href: "mailto:om224367@gmail.com",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -65,17 +67,21 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-base text-white/40 leading-relaxed"
+          className="text-base text-white/40 leading-relaxed mb-8"
         >
           Whether it&apos;s a collaboration, an opportunity, or just a conversation — I&apos;m open to connecting with people who want to make a real difference.
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="flex flex-wrap justify-center gap-4 md:gap-6"
-        >
+        <ContactForm />
+
+        <div className="pt-12">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-8">Social Connections</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="flex flex-wrap justify-center gap-4 md:gap-6"
+          >
           {links.map(({ label, href, icon }) => (
             <a
               key={label}
@@ -89,7 +95,8 @@ export default function Contact() {
               <span>{label}</span>
             </a>
           ))}
-        </motion.div>
+          </motion.div>
+        </div>
 
         <motion.p
           initial={{ opacity: 0 }}

@@ -37,9 +37,9 @@ export default function ProjectWindow({
           <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-[101] p-0 md:p-10">
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 50 }}
-              animate={{ 
-                scale: 1, 
-                opacity: 1, 
+              animate={{
+                scale: 1,
+                opacity: 1,
                 y: 0,
                 width: isFullscreen ? "100%" : "min(1200px, 100vw)",
                 height: isFullscreen ? "100%" : "min(800px, 100dvh)",
@@ -52,18 +52,18 @@ export default function ProjectWindow({
               <div className="h-10 bg-[#2c2c2e] flex items-center px-4 relative flex-shrink-0 select-none">
                 {/* Traffic Lights */}
                 <div className="flex gap-2 group/lights">
-                  <button 
+                  <button
                     onClick={onClose}
                     className="w-3 h-3 rounded-full bg-[#ff5f57] flex items-center justify-center relative overflow-hidden active:brightness-75 transition-all"
                   >
-                     <span className="opacity-0 group-hover/lights:opacity-100 text-[8px] text-black/60 font-bold">×</span>
+                    <span className="opacity-0 group-hover/lights:opacity-100 text-[8px] text-black/60 font-bold">×</span>
                   </button>
-                  <button 
+                  <button
                     className="w-3 h-3 rounded-full bg-[#febc2e] flex items-center justify-center relative overflow-hidden active:brightness-75 transition-all"
                   >
                     <span className="opacity-0 group-hover/lights:opacity-100 text-[10px] text-black/60 font-bold mb-1">−</span>
                   </button>
-                  <button 
+                  <button
                     onClick={onToggleFullscreen}
                     className="w-3 h-3 rounded-full bg-[#28c840] flex items-center justify-center relative overflow-hidden active:brightness-75 transition-all"
                   >

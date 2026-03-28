@@ -124,8 +124,8 @@ function ImageSlider({ images, isInView }: { images: JourneyImage[]; isInView: b
             key={i}
             onClick={() => setActiveIndex(i)}
             className={`rounded-full transition-all duration-400 ease-in-out ${i === activeIndex
-                ? "w-8 h-2 bg-white"
-                : "w-2 h-2 bg-white/30 hover:bg-white/50"
+              ? "w-8 h-2 bg-white"
+              : "w-2 h-2 bg-white/30 hover:bg-white/50"
               }`}
             aria-label={`Go to slide ${i + 1}`}
           />
@@ -410,8 +410,8 @@ function MilestoneSection({ milestone, index }: { milestone: typeof milestones[0
                     animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.4 + (i * 0.1), ease: "easeOut" }}
                     className={`relative mx-auto rounded-[20px] overflow-hidden shadow-2xl ${isAchievement ? "border border-white/10 md:max-w-md" :
-                        isEvent ? "border border-white/5" :
-                          "border border-white/15 drop-shadow-2xl"
+                      isEvent ? "border border-white/5" :
+                        "border border-white/15 drop-shadow-2xl"
                       }`}
                   >
                     {img.src.endsWith(".mp4") ? (

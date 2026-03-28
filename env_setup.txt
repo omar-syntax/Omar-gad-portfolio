@@ -1,0 +1,17 @@
+# Contact Form Email Configuration
+# 1. Create a file named ".env.local" in your project's root directory.
+# 2. Copy the following lines into it:
+
+EMAIL_USER=om224367@gmail.com
+
+# Your Gmail App Password (NOT your regular password)
+# To get an App Password: 
+# 1. Enable 2-Step Verification on your Google Account.
+# 2. Go to MyAccount -> Security -> 2-Step Verification -> App passwords (at the bottom).
+# 3. Select 'Mail' and 'Other (Portfolio Website)'.
+# 4. Copy the 16-character password and paste it into the line below (remove spaces).
+EMAIL_PASS=otlkdwfmredelced
+
+# ---------------------------------------------------------
+# After creating the file and adding your credentials, 
+# restart your 'npm run dev' terminal.

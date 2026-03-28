@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
 import Sidebar from "@/components/ui/Sidebar";
+import BackToTop from "@/components/ui/BackToTop";
 
 export default function RootLayout({
   children,
@@ -30,6 +31,7 @@ export default function RootLayout({
         <div className="relative z-10">
           <Sidebar />
           {children}
+          <BackToTop />
         </div>
       </body>
     </html>

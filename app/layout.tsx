@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Omar Mohamed Gad — Software Engineer & Future AI Founder",
+  title: "Omar Mohamed Gad | Software Engineer",
   description:
     "18-year-old software engineer, AI enthusiast, and student leader building systems that create real impact.",
 };

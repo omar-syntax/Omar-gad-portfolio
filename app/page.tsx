@@ -12,7 +12,8 @@ function Teaser({
   description,
   href,
   label,
-  imageSrc
+  imageSrc,
+  id
 }: {
   title: string;
   subtitle: string;
@@ -20,11 +21,13 @@ function Teaser({
   href: string;
   label: string;
   imageSrc: string;
+  id?: string;
 }) {
   const { ref, isInView } = useScrollAnimation(0.2);
 
   return (
     <motion.section
+      id={id}
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -96,6 +99,7 @@ export default function Home() {
       />
 
       <Teaser
+        id="journey"
         label="Journey"
         title="A decade of creation."
         subtitle="From first spark to TV fame."

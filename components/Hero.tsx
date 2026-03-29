@@ -1,17 +1,18 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-
-const PHRASES = [
-  "Software Engineer & Future AI Founder.",
-  "Building systems that matter.",
-  "Driven by impact, not just code.",
-  "Turning complex problems into elegant solutions.",
-];
+import Typewriter from "typewriter-effect";
 
 import Link from "next/link";
+
+const scrollToJourney = () => {
+  document.getElementById("journey")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
@@ -22,34 +23,6 @@ export default function Hero() {
 
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const imageOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 0.5, 0]);
-
-  const [text, setText] = useState("");
-  const [phraseIndex, setPhraseIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentPhrase = PHRASES[phraseIndex];
-    let timeout: NodeJS.Timeout;
-
-    if (!isDeleting && text === currentPhrase) {
-      timeout = setTimeout(() => setIsDeleting(true), 2000); // Pause at end of phrase
-    } else if (isDeleting && text === "") {
-      setIsDeleting(false);
-      setPhraseIndex((prev) => (prev + 1) % PHRASES.length);
-      timeout = setTimeout(() => { }, 500); // Small pause before typing next
-    } else {
-      const nextText = isDeleting
-        ? currentPhrase.substring(0, text.length - 1)
-        : currentPhrase.substring(0, text.length + 1);
-
-      // Typing speed: normal when typing, slightly faster when deleting
-      const speed = isDeleting ? 30 : 60;
-
-      timeout = setTimeout(() => setText(nextText), speed);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, phraseIndex]);
 
   return (
     <section ref={containerRef} className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-end">
@@ -75,12 +48,28 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="min-h-[80px] md:min-h-[60px]"
+            className="min-h-[48px] flex items-center"
           >
-            <p className="text-lg md:text-xl text-white/50 max-w-lg leading-relaxed font-mono">
-              <span className="text-white">{text}</span>
-              <span className="inline-block w-[8px] h-[1.2em] bg-white ml-1 animate-[pulse_1s_cubic-bezier(0.4,0,0.6,1)_infinite] align-text-bottom"></span>
-            </p>
+            <div className="text-xl md:text-2xl font-medium font-mono text-white">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Software Engineer",
+                    "Full Stack Developer",
+                    "React & TypeScript Specialist",
+                    "AI Solutions Builder",
+                    "System Architect",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 50,
+                  delay: 100,
+                  cursor: "|",
+                  wrapperClassName: "typewriter-text",
+                  cursorClassName: "typewriter-cursor",
+                }}
+              />
+            </div>
           </motion.div>
 
           <motion.div
@@ -88,14 +77,16 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            <Link
-              href="/about"
+            <motion.button
+              onClick={scrollToJourney}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none group border border-white/30 hover:border-white transition-colors duration-300"
             >
               <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-8 py-1 text-sm font-medium text-white transition-all duration-300 group-hover:bg-white group-hover:text-black">
                 Explore My Journey
               </span>
-            </Link>
+            </motion.button>
           </motion.div>
         </div>
 

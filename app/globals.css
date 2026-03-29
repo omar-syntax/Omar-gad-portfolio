@@ -65,6 +65,19 @@ video {
   box-sizing: border-box;
 }
 
+/* Typewriter cursor styles */
+.typewriter-cursor {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  animation: blink 0.53s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

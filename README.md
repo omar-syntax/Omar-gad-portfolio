@@ -39,7 +39,7 @@
 | **Nodemailer 8** | Server-side email sending via the contact form API |
 | **typewriter-effect** | Typing animation in the Hero section |
 | **React Icons / Lucide** | Icon libraries used throughout the UI |
-| **Vercel** | Hosting, automatic deployments, serverless functions |
+| **Netlify** | Hosting, automatic deployments, serverless functions |
 
 ---
 

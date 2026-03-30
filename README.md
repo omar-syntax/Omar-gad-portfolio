@@ -118,4 +118,4 @@ Web Programming · Grade 2 · 2025–2026
 
 ---
 
-*Built with Next.js · Deployed on Vercel*
+*Built with Next.js · Deployed on Netlify*

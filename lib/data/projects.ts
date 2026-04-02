@@ -10,7 +10,7 @@ export const projects: Project[] = [
     shortDescription: "A productivity platform combining task management, habit tracking, and community.",
     description: "Full-stack SaaS combining task management, habit tracking, long-term project planning, focus rooms with gamification, leaderboards, and a social community feed. Currently has 30+ active users.",
     tech: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Firebase", "Vite"],
-    preview: { type: "iframe", url: "https://boostly-app.vercel.app" },
+    preview: { type: "iframe", url: "https://boostly-m.site" },
     images: "/projects/boostly/",
     imageFiles: [
       "boostly.png",
@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "boostly-6.png",
       "boostly-7.png"
     ],
-    links: { site: "https://boostly-app.vercel.app", github: "" }
+    links: { site: "https://boostly-m.site", github: "" }
   },
   {
     id: 2,
@@ -32,10 +32,10 @@ export const projects: Project[] = [
     shortDescription: "Multi-tenant school management platform for multiple schools, branches, and roles.",
     description: "Enterprise-level multi-tenant school management system built for NASS Academy. Handles behavioral and academic grades with strict data isolation, role-based permissions (Student, Teacher, Admin, Super Admin), and real-time updates.",
     tech: ["React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "React Query", "Zustand"],
-    preview: { type: "iframe", url: "https://nass-grades.vercel.app" },
+    preview: { type: "iframe", url: "https://nass-board.netlify.app" },
     images: "/projects/nass/",
     imageFiles: ["NASS-grades-management-system.png", "NASS-grades-management-system-2.png"],
-    links: { site: "https://nass-grades.vercel.app", github: "" }
+    links: { site: "https://nass-board.netlify.app", github: "" }
   },
   {
     id: 3,
@@ -46,14 +46,14 @@ export const projects: Project[] = [
     shortDescription: "Real-time violations management system for school leadership teams.",
     description: "Comprehensive violations management system for WE ATS school leaders. Features 36 violation categories, repeat tracking, real-time Firebase sync, Google Sheets integration for reporting, and role-based access control.",
     tech: ["React", "TypeScript", "Tailwind CSS", "Firebase", "Google Apps Script"],
-    preview: { type: "iframe", url: "https://leaders-violations.vercel.app" },
+    preview: { type: "iframe", url: "https://toukh-leaders.netlify.app" },
     images: "/projects/violations/",
     imageFiles: [
       "leaders-violatons-system.png",
       "leaders-violatons-system-2.png",
       "leaders-violatons-system-3.png"
     ],
-    links: { site: "https://leaders-violations.vercel.app", github: "" }
+    links: { site: "https://toukh-leaders.netlify.app", github: "" }
   },
   {
     id: 4,
@@ -64,14 +64,14 @@ export const projects: Project[] = [
     shortDescription: "Student-facing grade lookup system used daily by hundreds of students.",
     description: "A student-facing system allowing WE ATS students to access behavioral and academic grades via National ID lookup. Integrates with Google Sheets via Apps Script, supports Arabic RTL, and generates PDF reports.",
     tech: ["React", "TypeScript", "Tailwind CSS", "Google Apps Script", "Netlify"],
-    preview: { type: "iframe", url: "https://we-pts-grades.netlify.app" },
+    preview: { type: "iframe", url: "https://we-toukh.netlify.app" },
     images: "/projects/grades/",
     imageFiles: [
       "School-behavioral-grades.png",
       "School-behavioral-grades-2.png",
       "School-behavioral-grades-3.png"
     ],
-    links: { site: "https://we-pts-grades.netlify.app", github: "" }
+    links: { site: "https://we-toukh.netlify.app", github: "" }
   },
   {
     id: 5,
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     shortDescription: "Digital platform for managing school competitions and project submissions.",
     description: "A digital platform built for WE Applied Technology School to manage competitions and projects. Replaces paper-based processes with a streamlined admin panel, student dashboard, and submission tracking system.",
     tech: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
-    preview: { type: "iframe", url: "" },
+    preview: { type: "iframe", url: "https://competition11.netlify.app" },
     images: "/projects/competition/",
     imageFiles: [
       "competetion_cover.png",
@@ -92,7 +92,7 @@ export const projects: Project[] = [
       "competetion_4.png",
       "competetion_5.png"
     ],
-    links: { site: "", github: "" }
+    links: { site: "https://competition11.netlify.app", github: "" }
   },
   {
     id: 6,
@@ -103,7 +103,7 @@ export const projects: Project[] = [
     shortDescription: "Portfolio website for an Egyptian Ferrari racing driver and influencer.",
     description: "A sleek, performance-optimized portfolio for an Egyptian Ferrari racing driver. Showcases his exotic car fleet, racing journey timeline, and achievements with smooth animations and responsive design.",
     tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    preview: { type: "iframe", url: "https://exoticsdriver.com" },
+    preview: { type: "iframe", url: "https://exotics-driver.netlify.app" },
     images: "/projects/exotics/",
     imageFiles: [
       "exotics-driver.png",
@@ -111,7 +111,7 @@ export const projects: Project[] = [
       "exotics-driver-3.png",
       "exotics-driver-4.png"
     ],
-    links: { site: "https://exoticsdriver.com", github: "" }
+    links: { site: "https://exotics-driver.netlify.app", github: "" }
   },
   {
     id: 7,
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
     preview: { type: "notebook", file: "/projects/investigate/Investigate.ipynb" },
     images: "/projects/investigate/",
-    imageFiles: ["Investigate.html"], // Usually we show charts or screenshots, but for now i'll use what's there
+    imageFiles: ["cover.png"],
     links: { site: "", github: "" }
   },
   {
@@ -171,7 +171,7 @@ export const projects: Project[] = [
     tech: ["Python"],
     preview: { type: "terminal" },
     images: "/projects/adventuregame/",
-    imageFiles: [],
+    imageFiles: ["cover.png"],
     links: { site: "", github: "" }
   }
 ];

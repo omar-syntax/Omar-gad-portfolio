@@ -22,8 +22,7 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
       viewport={{ once: true }}
       whileHover={{ y: -5 }}
       transition={{ duration: 0.5 }}
-      className="group relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] cursor-pointer"
-      onClick={() => onOpen(project)}
+      className="group relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] cursor-default"
     >
       {/* Background Image */}
       <Image
@@ -49,7 +48,7 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
             e.stopPropagation();
             onOpen(project);
           }}
-          className="px-6 py-2.5 bg-white text-black rounded-full text-sm font-bold active:scale-95 transition-transform"
+          className="px-6 py-2.5 bg-white text-black rounded-full text-sm font-bold active:scale-95 transition-transform cursor-pointer"
         >
           Show Details
         </button>

@@ -76,6 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="flex flex-wrap gap-4"
           >
             <motion.button
               onClick={scrollToJourney}
@@ -87,6 +88,18 @@ export default function Hero() {
                 Explore My Journey
               </span>
             </motion.button>
+
+            <motion.a
+              href="/resume.pdf"
+              download="Omar_Mohamed_Gad_Resume.pdf"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none group border border-white/10 hover:border-white/40 transition-colors duration-300"
+            >
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white/5 backdrop-blur-sm px-8 py-1 text-sm font-medium text-white transition-all duration-300 group-hover:bg-white group-hover:text-black">
+                Download Resume
+              </span>
+            </motion.a>
           </motion.div>
         </div>
 

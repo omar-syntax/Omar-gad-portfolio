@@ -10,30 +10,60 @@ import ImageSlider from "@/components/ImageSlider";
 import TerminalEmulator from "@/components/macOS/Terminal";
 import NotebookViewer from "@/components/macOS/Notebook";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useAnimationControls } from "framer-motion";
-import { useEffect } from "react";
+import { 
+  useMotionValue, 
+  useAnimationFrame, 
+  useTransform, 
+  useSpring,
+  wrap 
+} from "framer-motion";
+import { useRef, useEffect } from "react";
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
   const { ref, isInView } = useScrollAnimation(0.2);
-  const controls = useAnimationControls();
 
-  useEffect(() => {
-    if (isInView) {
-      controls.start({
-        x: ["0%", "-50%"],
-        transition: {
-          duration: 30,
-          ease: "linear",
-          repeat: Infinity,
-        }
-      });
-    } else {
-      controls.stop();
+  const baseX = useMotionValue(0);
+  const scrollVelocity = useMotionValue(0);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 400
+  });
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+    clamp: false
+  });
+
+  const x = useTransform(baseX, (v) => `${wrap(-50, 0, v)}%`);
+
+  const directionFactor = useRef<number>(1);
+  const isDragging = useRef<boolean>(false);
+  const isHovered = useRef<boolean>(false);
+
+  useAnimationFrame((t, delta) => {
+    // Only move if not dragging and not hovered
+    if (isDragging.current || isHovered.current) return;
+    
+    let moveBy = directionFactor.current * -0.15 * (delta / 1000) * 10; // Even slower base speed
+    
+    // Add velocity momentum factor (e.g. after a scroll release)
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+    baseX.set(baseX.get() + moveBy);
+  });
+
+  const handleWheel = (e: React.WheelEvent) => {
+    // Only handle horizontal or heavy vertical scroll on the track
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+        baseX.set(baseX.get() + e.deltaX * 0.05);
+        scrollVelocity.set(e.deltaX);
+    } else if (Math.abs(e.deltaY) > 5) {
+        // Allow vertical scroll to also move it slightly for that "interactive" feel
+        baseX.set(baseX.get() - e.deltaY * 0.05);
+        scrollVelocity.set(-e.deltaY);
     }
-  }, [isInView, controls]);
+  };
 
   const handleOpenProject = (project: Project) => {
     setActiveProject(project);
@@ -67,31 +97,49 @@ export default function Projects() {
         </div>
 
         {/* Infinite Horizontal Scroll */}
-        <div className="relative mt-12 overflow-hidden py-10">
-          <motion.div
-            animate={controls}
-            onHoverStart={() => controls.stop()}
-            onHoverEnd={() => {
-              controls.start({
-                x: ["0%", "-50%"],
-                transition: {
-                  duration: 30,
-                  ease: "linear",
-                  repeat: Infinity,
-                }
-              });
+        <div 
+            className="relative mt-12 overflow-hidden py-10 cursor-grab active:cursor-grabbing"
+            onWheel={handleWheel}
+            onMouseEnter={() => { isHovered.current = true; }}
+            onMouseLeave={() => { isHovered.current = false; }}
+        >
+          <motion.div 
+            className="flex w-fit"
+            style={{ x }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragStart={() => { isDragging.current = true; }}
+            onDragEnd={() => { isDragging.current = false; }}
+            onDrag={(e, info) => {
+                // Update baseX based on drag delta (normalized to percentage roughly)
+                // Since we don't know the exact px width here without a ref, 
+                // we can just use a constant factor for now or measure it.
+                baseX.set(baseX.get() + info.delta.x * 0.05); 
+                scrollVelocity.set(info.velocity.x);
             }}
-            className="flex gap-8 w-fit"
-            style={{ display: "flex" }}
           >
-            {[...projects, ...projects].map((project, index) => (
-              <div key={`${project.id}-${index}`} className="flex-shrink-0 w-[350px] md:w-[450px]">
-                <ProjectCard
-                  project={project}
-                  onOpen={handleOpenProject}
-                />
-              </div>
-            ))}
+            {/* First Set */}
+            <div className="flex gap-8 pr-8">
+              {projects.map((project, index) => (
+                <div key={`set1-${project.id}-${index}`} className="flex-shrink-0 w-[350px] md:w-[450px]">
+                  <ProjectCard
+                    project={project}
+                    onOpen={handleOpenProject}
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Second Set */}
+            <div className="flex gap-8 pr-8">
+              {projects.map((project, index) => (
+                <div key={`set2-${project.id}-${index}`} className="flex-shrink-0 w-[350px] md:w-[450px]">
+                  <ProjectCard
+                    project={project}
+                    onOpen={handleOpenProject}
+                  />
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Gradient Overlays for smooth edges */}

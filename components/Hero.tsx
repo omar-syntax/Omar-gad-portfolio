@@ -25,11 +25,11 @@ export default function Hero() {
   const imageOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 0.5, 0]);
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-end">
-      <div className="flex-1 w-full max-w-7xl px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10 pb-12 min-h-0">
+    <section ref={containerRef} className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center">
+      <div className="relative w-full max-w-7xl px-6 md:px-20 flex flex-col md:flex-row items-center justify-between z-10 gap-12 md:gap-16 text-center md:text-left">
 
-        {/* Left Side: Content */}
-        <div className="flex flex-col items-start gap-8">
+        {/* Left: Content */}
+        <div className="flex flex-col items-center md:items-start gap-6 max-w-3xl flex-1">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export default function Hero() {
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
               Engineering <br />
-              <span className="text-white">
+              <span className="text-white/60">
                 ideas into reality.
               </span>
             </h1>
@@ -50,7 +50,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="min-h-[48px] flex items-center"
           >
-            <div className="text-xl md:text-2xl font-medium font-mono text-white">
+            <div className="text-xl md:text-2xl font-medium font-mono text-white/80">
               <Typewriter
                 options={{
                   strings: [
@@ -76,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap justify-center md:justify-start gap-4"
           >
             <motion.button
               onClick={scrollToJourney}
@@ -103,22 +103,22 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right Side: Professional Image */}
+        {/* Right: Professional Image */}
         <motion.div
-          initial={{ opacity: 0, x: 20, scale: 0.95 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="relative w-full h-[40vh] md:h-full min-h-0 flex items-end justify-center"
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+          className="relative w-full max-w-[400px] aspect-square md:aspect-[4/3] flex-shrink-0"
         >
           <motion.div
             style={{ y: imageY, opacity: imageOpacity }}
-            className="w-full h-full relative border-none flex items-end justify-center"
+            className="w-full h-full relative border border-white/10 rounded-3xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="/images/profile.png"
+              src="/images/profile.jpg"
               alt="Omar Mohamed Gad"
               fill
-              className="object-contain object-bottom pointer-events-none drop-shadow-2xl"
+              className="object-cover pointer-events-none"
               priority
             />
           </motion.div>

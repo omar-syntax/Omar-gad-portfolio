@@ -40,7 +40,7 @@ export default function AnimatedBackground() {
         {dots.map((_, i) => (
           <motion.div
             key={`dot-${i}`}
-            className="absolute rounded-full bg-white/30"
+            className="absolute rounded-full bg-white/60"
             style={{
               width: `${(i % 3) + 1.5}px`,
               height: `${(i % 3) + 1.5}px`,
@@ -49,7 +49,7 @@ export default function AnimatedBackground() {
             }}
             animate={{
               y: [0, -20, 0],
-              opacity: [0.05, 0.35, 0.05],
+              opacity: [0.1, 0.6, 0.1],
             }}
             transition={{
               duration: 5 + (i % 8),
@@ -63,7 +63,7 @@ export default function AnimatedBackground() {
         {circles.map((_, i) => (
           <motion.div
             key={`circle-${i}`}
-            className="absolute rounded-full border border-white/5"
+            className="absolute rounded-full border border-white/15"
             style={{
               width: `${200 + i * 150}px`,
               height: `${200 + i * 150}px`,
@@ -86,7 +86,7 @@ export default function AnimatedBackground() {
         {lines.map((_, i) => (
           <motion.div
             key={`line-${i}`}
-            className="absolute bg-gradient-to-r from-transparent via-white/10 to-transparent"
+            className="absolute bg-gradient-to-r from-transparent via-white/20 to-transparent"
             style={{
               width: `${200 + (i % 3) * 100}px`,
               height: "1px",
@@ -95,7 +95,7 @@ export default function AnimatedBackground() {
               rotate: `${(i * 45) % 180}deg`,
             }}
             animate={{
-              opacity: [0.03, 0.15, 0.03],
+              opacity: [0.08, 0.3, 0.08],
             }}
             transition={{
               duration: 8 + (i % 4),

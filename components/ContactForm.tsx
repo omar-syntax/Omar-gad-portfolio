@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { sendContactForm } from "@/frontend/api/contact";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -16,26 +17,15 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      message: formData.get("message") as string,
     };
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setStatus("success");
-        form.reset();
-      } else {
-        throw new Error(result.error || "Something went wrong. Please try again.");
-      }
+      await sendContactForm(data);
+      setStatus("success");
+      form.reset();
     } catch (error: any) {
       console.error("Submission error:", error);
       setStatus("error");

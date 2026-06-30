@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useScrollAnimation } from "@/frontend/state/useScrollAnimation";
 
 export default function About() {
   const { ref, isInView } = useScrollAnimation(0.2);

@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Project } from "@/types/project";
-import { projects } from "@/lib/data/projects";
-import ProjectCard from "@/components/ProjectCard";
-import ProjectWindow from "@/components/macOS/Window";
-import ImageSlider from "@/components/ImageSlider";
-import TerminalEmulator from "@/components/macOS/Terminal";
-import NotebookViewer from "@/components/macOS/Notebook";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Project } from "@/frontend/shared/types/project";
+import { projects } from "@/frontend/shared/data/projects";
+import ProjectCard from "@/frontend/ui/features/ProjectCard";
+import ProjectWindow from "@/frontend/ui/macOS/Window";
+import ImageSlider from "@/frontend/ui/features/ImageSlider";
+import TerminalEmulator from "@/frontend/ui/macOS/Terminal";
+import NotebookViewer from "@/frontend/ui/macOS/Notebook";
+import { useScrollAnimation } from "@/frontend/state/useScrollAnimation";
 import { 
   useMotionValue, 
   useAnimationFrame, 

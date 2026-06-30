@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import Hero from "@/components/Hero";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import Hero from "@/frontend/ui/features/Hero";
+import { useScrollAnimation } from "@/frontend/state/useScrollAnimation";
 
 function Teaser({
   title,

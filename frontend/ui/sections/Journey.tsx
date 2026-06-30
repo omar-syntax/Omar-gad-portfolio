@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, PanInfo } from "framer-motion";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useScrollAnimation } from "@/frontend/state/useScrollAnimation";
 import Image from "next/image";
 
 type ImageType = "achievement" | "event" | "official" | "grid";

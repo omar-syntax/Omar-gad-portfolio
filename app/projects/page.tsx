@@ -1,5 +1,5 @@
-import Projects from "@/sections/Projects";
-import Leadership from "@/sections/Leadership";
+import Projects from "@/frontend/ui/sections/Projects";
+import Leadership from "@/frontend/ui/sections/Leadership";
 
 export default function ProjectsPage() {
   return (

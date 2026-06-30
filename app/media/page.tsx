@@ -1,4 +1,4 @@
-import Media from "@/sections/Media";
+import Media from "@/frontend/ui/sections/Media";
 
 export default function MediaPage() {
   return (

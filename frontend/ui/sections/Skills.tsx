@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useScrollAnimation } from "@/frontend/state/useScrollAnimation";
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiBootstrap, SiHtml5, SiCss,
   SiPython, SiPandas, SiNumpy, SiScikitlearn, SiMysql, SiFirebase, SiSupabase, SiGit, SiGithub

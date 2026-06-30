@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import ContactForm from "@/components/ContactForm";
+import ContactForm from "@/frontend/ui/features/ContactForm";
 
 
 const links = [

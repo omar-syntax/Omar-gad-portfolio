@@ -1,4 +1,4 @@
-import Journey from "@/sections/Journey";
+import Journey from "@/frontend/ui/sections/Journey";
 
 export default function JourneyPage() {
   return (

@@ -7,9 +7,9 @@ export const metadata: Metadata = {
     "18-year-old software engineer, AI enthusiast, and student leader building systems that create real impact.",
 };
 
-import AnimatedBackground from "@/components/ui/AnimatedBackground";
-import Sidebar from "@/components/ui/Sidebar";
-import BackToTop from "@/components/ui/BackToTop";
+import AnimatedBackground from "@/frontend/ui/layout/AnimatedBackground";
+import Sidebar from "@/frontend/ui/layout/Sidebar";
+import BackToTop from "@/frontend/ui/layout/BackToTop";
 
 export default function RootLayout({
   children,

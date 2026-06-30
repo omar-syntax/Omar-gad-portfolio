@@ -1,6 +1,6 @@
-import About from "@/sections/About";
-import Skills from "@/sections/Skills";
-import Vision from "@/sections/Vision";
+import About from "@/frontend/ui/sections/About";
+import Skills from "@/frontend/ui/sections/Skills";
+import Vision from "@/frontend/ui/sections/Vision";
 
 export default function AboutPage() {
   return (

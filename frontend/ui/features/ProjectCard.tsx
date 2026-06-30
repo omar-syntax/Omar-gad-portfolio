@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Project } from "@/types/project";
+import { Project } from "@/frontend/shared/types/project";
 
 interface ProjectCardProps {
   project: Project;
